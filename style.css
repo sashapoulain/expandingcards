@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.cardwrap {
+    display: flex;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 90vh;
+    position: relative;
+    border-radius: 40px;
+    margin: 10px;
+    border: 5px solid #cccdc8;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 0.5;
+    transition: flex 0.7s ease-in;
+}
+
+.card .title {
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
+    color: white;
+    font-size: 3rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+.card.active {
+    flex: 2;
+}
+
+.card.active .title {
+    opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .card:nth-child(4),
+    .card:nth-child(5) {
+        display: none;
+        width: 100vw;
+    }
+}
